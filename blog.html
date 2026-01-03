@@ -7,48 +7,142 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <img class="brand" src="assets/mpms-logo-horizontal.png" alt="MPMS Logo">
-            <div class="header-right">
-                <a class="header-phone" href="tel:8002156224">(800) 215-6224</a>
-                <nav class="nav">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="billing-guide.html">Billing Guide</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="blog.html">Blog</a>
-                </nav>
+        <!-- HEADER START -->
+        <header class="site-header">
+            <div class="container header-inner">
+                <img class="brand" src="assets/mpms-logo-horizontal.png" alt="MPMS Logo">
+                <div class="header-right">
+                    <a class="header-phone" href="tel:8002156224">(800) 215-6224</a>
+                    <div class="nav-wrapper">
+                        <button class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <nav id="primary-navigation" class="nav" data-menu>
+                            <a href="index.html">Home</a>
+                            <div class="nav-dropdown">
+                                <a class="nav-dropdown-link" href="about.html">About</a>
+                                <div class="nav-dropdown-menu">
+                                    <a href="meet-the-staff.html">Meet the Staff</a>
+                                    <a href="faqs.html">FAQs</a>
+                                    <a href="who-we-help.html">Who We Help</a>
+                                </div>
+                            </div>
+                            <div class="nav-dropdown">
+                                <a class="nav-dropdown-link" href="services.html">Services</a>
+                                <div class="nav-dropdown-menu">
+                                    <a href="credentialing.html">Credentialing</a>
+                                    <a href="coding-and-billing.html">Coding and Billing</a>
+                                    <a href="ar-follow-up.html">AR Follow-Up</a>
+                                    <a href="patient-collections.html">Patient Collections</a>
+                                </div>
+                            </div>
+                            <a href="billing-guide.html">Billing Guide</a>
+                            <a href="contact.html">Contact</a>
+                            <a href="blog.html">Blog</a>
+                        </nav>
+                    </div>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
+        <!-- HEADER END -->
 
     <main id="top" class="container">
         <section class="section">
             <h1>Blog</h1>
-            <p>Drop your posts or article links here. Replace this placeholder content with your own.</p>
+            <p>Use this template to drop in posts, announcements, or links to longer articles as you publish them.</p>
             <div class="grid">
-                <article class="card">Post preview</article>
-                <article class="card">Post preview</article>
-                <article class="card">Post preview</article>
+                <article class="card">
+                    <h2>Post title goes here</h2>
+                    <p><strong>Category</strong> - Month Day, Year</p>
+                    <p>Short excerpt that summarizes the post in one or two sentences.</p>
+                    <a href="#">Read more</a>
+                </article>
+                <article class="card">
+                    <h2>Post title goes here</h2>
+                    <p><strong>Category</strong> - Month Day, Year</p>
+                    <p>Short excerpt that summarizes the post in one or two sentences.</p>
+                    <a href="#">Read more</a>
+                </article>
+                <article class="card">
+                    <h2>Post title goes here</h2>
+                    <p><strong>Category</strong> - Month Day, Year</p>
+                    <p>Short excerpt that summarizes the post in one or two sentences.</p>
+                    <a href="#">Read more</a>
+                </article>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container footer-content">
-            <p>© 2026 MPMS. All rights reserved.</p>
-            <div class="footer-social">
-                <a class="social-btn" href="https://facebook.com" aria-label="Facebook">
-                    <img src="assets/footer/Facebook_Logo_Primary.png" alt="Facebook">
-                </a>
-                <a class="social-btn" href="https://www.linkedin.com" aria-label="LinkedIn">
-                    <img src="assets/footer/LI-In-Bug.png" alt="LinkedIn">
-                </a>
-                <a class="social-btn email" href="mailto:info@example.com" aria-label="Email"><span>@</span></a>
-            </div>
-        </div>
-    </footer>
+                <!-- FOOTER START -->
+                <footer class="footer">
+                    <div class="container footer-content">
+                        <div class="footer-top">
+                            <div class="footer-ask">
+                                <img class="footer-ask-photo" src="assets/footer/secta.ai_014.jpg" alt="Bryan, CEO of MPMS">
+                                <div>
+                                    <p class="footer-ask-kicker">Have questions?</p>
+                                    <p class="footer-ask-title">Ask Bryan, our CEO</p>
+                                </div>
+                            </div>
+                            <a class="footer-cta-btn" href="contact.html">Contact Us</a>
+                        </div>
+                
+                        <div class="footer-bottom">
+                            <div class="footer-info">
+                                <p>8836 N Hess St Ste B</p>
+                                <p>Hayden, Idaho 83835</p>
+                                <p>(800) 215-6224</p>
+                                <div class="footer-divider" aria-hidden="true"></div>
+                                <p class="footer-copy">© 2026 MPMS. All rights reserved.</p>
+                            </div>
+                            <div class="footer-social-block">
+                                <div class="footer-social">
+                                    <a class="social-btn" href="https://www.facebook.com/profile.php?id=100029109564676" aria-label="Facebook">
+                                        <img src="assets/footer/Facebook_Logo_Primary.png" alt="Facebook">
+                                    </a>
+                                    <a class="social-btn" href="https://www.linkedin.com/company/medical-practice-management-services/" aria-label="LinkedIn">
+                                        <img src="assets/footer/LI-In-Bug.png" alt="LinkedIn">
+                                    </a>
+                                    <a class="social-btn email" href="mailto:marketing@mpms.com" aria-label="Email"><span>@</span></a>
+                                </div>
+                                <a class="footer-admin" href="admin.html">Admin</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- FOOTER END -->
+        <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyDGbEpmLm2HxkFvcca6Ae4V2Kfn--d7bRo",
+        authDomain: "mpms-website-80b69.firebaseapp.com",
+        projectId: "mpms-website-80b69",
+        storageBucket: "mpms-website-80b69.firebasestorage.app",
+        messagingSenderId: "837288121384",
+        appId: "1:837288121384:web:e6d25084ac17d98575d11d",
+        measurementId: "G-JH8H58273B"
+      };
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+    <script src="scripts/nav.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

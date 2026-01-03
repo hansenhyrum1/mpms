@@ -1,0 +1,20 @@
+{
+  "name": "functions",
+  "description": "Cloud Functions for the MPMS static site",
+  "private": true,
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "deploy": "firebase deploy --only functions"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.1"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "firebase-admin": "12.7.0",
+    "firebase-functions": "^5.1.0"
+  }
+}

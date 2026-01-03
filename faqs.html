@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MPMS | Contact</title>
+    <title>MPMS | FAQs</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -48,37 +48,48 @@
         </header>
         <!-- HEADER END -->
 
-    <main id="top" class="container contact-page">
-        <section class="section contact-card">
-            <h1>Contact</h1>
-            <p>Reach out and our team will follow up promptly.</p>
-            <p class="contact-phone-line">Prefer to call? <a href="tel:8002156224">(800) 215-6224</a></p>
-            <form class="contact-form" action="#" method="post">
-                <label>
-                    Name
-                    <input type="text" name="name" placeholder="Your name">
-                </label>
-                <label>
-                    Email
-                    <input type="email" name="email" placeholder="you@example.com">
-                </label>
-                <label>
-                    Phone
-                    <input type="tel" name="phone" placeholder="(555) 555-5555">
-                </label>
-                <label>
-                    Message
-                    <textarea name="message" rows="3" placeholder="How can we help?"></textarea>
-                </label>
-                <div class="recaptcha-wrap">
-                    <div class="g-recaptcha" data-sitekey="6LfGkj4sAAAAABswVqdcZ0VtC3C1i0hzeuZYzWiF"></div>
-                </div>
-                <div class="form-status" aria-live="polite">
-                    <span class="loading-spinner" aria-hidden="true"></span>
-                    <span class="form-status-text"></span>
-                </div>
-                <button type="submit">Send</button>
-            </form>
+    <main class="container">
+        <section class="section video-section">
+            <h1>FAQs</h1>
+            <p class="video-section-lede">Choose a topic below and let the short video answer your question.</p>
+            <div class="video-grid">
+                <article class="video-card">
+                    <div class="video-frame">
+                        <iframe src="https://www.youtube.com/embed/fDcKjlXi3qQ" title="How much does a billing service cost?" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-title">How much does a billing service cost?</p>
+                </article>
+                <article class="video-card">
+                    <div class="video-frame">
+                        <iframe src="https://www.youtube.com/embed/IWqYVa6WqEI" title="What does a billing service do for me?" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-title">What does a billing service do for me?</p>
+                </article>
+                <article class="video-card">
+                    <div class="video-frame">
+                        <iframe src="https://www.youtube.com/embed/JNG_H1_r8xQ" title="When should I look for a billing service?" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-title">When should I look for a billing service?</p>
+                </article>
+                <article class="video-card">
+                    <div class="video-frame">
+                        <iframe src="https://www.youtube.com/embed/FEh6_Y6L7QY" title="Will I have to adopt a new billing system?" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-title">Will I have to adopt a new billing system?</p>
+                </article>
+                <article class="video-card">
+                    <div class="video-frame">
+                        <iframe src="https://www.youtube.com/embed/8z26Ud_D2Kw" title="How do I improve coding in my practice?" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-title">How do I improve coding in my practice?</p>
+                </article>
+                <article class="video-card">
+                    <div class="video-frame">
+                        <iframe src="https://www.youtube.com/embed/THgUkbxYkcw" title="How do I improve credentialing in my practice?" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-title">How do I improve credentialing in my practice?</p>
+                </article>
+            </div>
         </section>
     </main>
 
@@ -120,12 +131,9 @@
             </div>
         </footer>
         <!-- FOOTER END -->
-
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script type="module">
+        <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
-
       const firebaseConfig = {
         apiKey: "AIzaSyDGbEpmLm2HxkFvcca6Ae4V2Kfn--d7bRo",
         authDomain: "mpms-website-80b69.firebaseapp.com",
@@ -135,72 +143,21 @@
         appId: "1:837288121384:web:e6d25084ac17d98575d11d",
         measurementId: "G-JH8H58273B"
       };
-      initializeApp(firebaseConfig);
-      getAnalytics();
-
-      const endpoint =
-        "https://us-central1-mpms-website-80b69.cloudfunctions.net/submitContact";
-      const form = document.querySelector(".contact-form");
-      const statusText = document.querySelector(".form-status-text");
-      const updateStatus = (message) => {
-        if (statusText) {
-          statusText.textContent = message;
-        }
-      };
-
-      form?.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        if (!form) return;
-        const submitBtn = form.querySelector("button[type='submit']");
-        submitBtn?.setAttribute("disabled", "disabled");
-        form.classList.add("is-loading");
-        updateStatus("Sending...");
-
-        const recaptchaToken = window.grecaptcha ? grecaptcha.getResponse() : "";
-        if (!recaptchaToken) {
-          updateStatus("Please complete the reCAPTCHA challenge.");
-          submitBtn?.removeAttribute("disabled");
-          form.classList.remove("is-loading");
-          return;
-        }
-
-        const formData = new FormData(form);
-        const payload = {
-          name: formData.get("name") ?? "",
-          email: formData.get("email") ?? "",
-          phone: formData.get("phone") ?? "",
-          message: formData.get("message") ?? "",
-          recaptchaToken
-        };
-
-        try {
-          const response = await fetch(endpoint, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
-          });
-
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-
-          updateStatus("Thanks! Your message is on its way.");
-          form.reset();
-          if (window.grecaptcha) {
-            grecaptcha.reset();
-          }
-        } catch (error) {
-          updateStatus("Something went wrong. Please try again.");
-        } finally {
-          submitBtn?.removeAttribute("disabled");
-          form.classList.remove("is-loading");
-        }
-      });
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
     </script>
     <script src="scripts/nav.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
 
 

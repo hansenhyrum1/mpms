@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "mpms-website-80b69",
+    "mpms": "mpms-website-80b69"
+  },
+  "targets": {},
+  "etags": {}
+}

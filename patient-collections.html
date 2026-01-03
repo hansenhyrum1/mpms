@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MPMS | Contact</title>
+    <title>MPMS | Patient Collections</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -48,37 +48,25 @@
         </header>
         <!-- HEADER END -->
 
-    <main id="top" class="container contact-page">
-        <section class="section contact-card">
-            <h1>Contact</h1>
-            <p>Reach out and our team will follow up promptly.</p>
-            <p class="contact-phone-line">Prefer to call? <a href="tel:8002156224">(800) 215-6224</a></p>
-            <form class="contact-form" action="#" method="post">
-                <label>
-                    Name
-                    <input type="text" name="name" placeholder="Your name">
-                </label>
-                <label>
-                    Email
-                    <input type="email" name="email" placeholder="you@example.com">
-                </label>
-                <label>
-                    Phone
-                    <input type="tel" name="phone" placeholder="(555) 555-5555">
-                </label>
-                <label>
-                    Message
-                    <textarea name="message" rows="3" placeholder="How can we help?"></textarea>
-                </label>
-                <div class="recaptcha-wrap">
-                    <div class="g-recaptcha" data-sitekey="6LfGkj4sAAAAABswVqdcZ0VtC3C1i0hzeuZYzWiF"></div>
-                </div>
-                <div class="form-status" aria-live="polite">
-                    <span class="loading-spinner" aria-hidden="true"></span>
-                    <span class="form-status-text"></span>
-                </div>
-                <button type="submit">Send</button>
-            </form>
+    <div class="intro">
+        <img src="assets/services/MPMS_Medical_Practice_Management_Services_Sub_Banner_3.jpg" alt="Patient collections support at MPMS">
+    </div>
+
+    <main class="container">
+        <section class="section service-text">
+            <h1 class="service-title">Patient Collections</h1>
+        </section>
+        <section class="section service-section">
+            <h2>Collection Methodology Goals</h2>
+            <ul class="service-list">
+                <li>Collection on self-pay accounts will be a mutually agreed upon plan of action.</li>
+                <li>The goal of the MPMS staff is to respond to all denials within 48 hours.</li>
+                <li>All self-pay accounts and claims are reviewed at 60 days to ensure a plan of action is in place for resolution.</li>
+                <li>MPMS audits credit balances and provides recommendations for resolution.</li>
+                <li>Any account to be assigned to collections agency will need approval from the client.</li>
+                <li>Any patient calls regarding clinical issues shall be worked in collaboration with the provider involved.</li>
+                <li>The MPMS staff is open to taking on clients old accounts receivable and all the work in reviewing said accounts.</li>
+            </ul>
         </section>
     </main>
 
@@ -120,12 +108,9 @@
             </div>
         </footer>
         <!-- FOOTER END -->
-
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script type="module">
+        <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
-
       const firebaseConfig = {
         apiKey: "AIzaSyDGbEpmLm2HxkFvcca6Ae4V2Kfn--d7bRo",
         authDomain: "mpms-website-80b69.firebaseapp.com",
@@ -135,72 +120,20 @@
         appId: "1:837288121384:web:e6d25084ac17d98575d11d",
         measurementId: "G-JH8H58273B"
       };
-      initializeApp(firebaseConfig);
-      getAnalytics();
-
-      const endpoint =
-        "https://us-central1-mpms-website-80b69.cloudfunctions.net/submitContact";
-      const form = document.querySelector(".contact-form");
-      const statusText = document.querySelector(".form-status-text");
-      const updateStatus = (message) => {
-        if (statusText) {
-          statusText.textContent = message;
-        }
-      };
-
-      form?.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        if (!form) return;
-        const submitBtn = form.querySelector("button[type='submit']");
-        submitBtn?.setAttribute("disabled", "disabled");
-        form.classList.add("is-loading");
-        updateStatus("Sending...");
-
-        const recaptchaToken = window.grecaptcha ? grecaptcha.getResponse() : "";
-        if (!recaptchaToken) {
-          updateStatus("Please complete the reCAPTCHA challenge.");
-          submitBtn?.removeAttribute("disabled");
-          form.classList.remove("is-loading");
-          return;
-        }
-
-        const formData = new FormData(form);
-        const payload = {
-          name: formData.get("name") ?? "",
-          email: formData.get("email") ?? "",
-          phone: formData.get("phone") ?? "",
-          message: formData.get("message") ?? "",
-          recaptchaToken
-        };
-
-        try {
-          const response = await fetch(endpoint, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
-          });
-
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-
-          updateStatus("Thanks! Your message is on its way.");
-          form.reset();
-          if (window.grecaptcha) {
-            grecaptcha.reset();
-          }
-        } catch (error) {
-          updateStatus("Something went wrong. Please try again.");
-        } finally {
-          submitBtn?.removeAttribute("disabled");
-          form.classList.remove("is-loading");
-        }
-      });
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
     </script>
     <script src="scripts/nav.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 

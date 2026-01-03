@@ -7,48 +7,200 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <img class="brand" src="assets/mpms-logo-horizontal.png" alt="MPMS Logo">
-            <div class="header-right">
-                <a class="header-phone" href="tel:8002156224">(800) 215-6224</a>
-                <nav class="nav">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="billing-guide.html">Billing Guide</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="blog.html">Blog</a>
-                </nav>
+        <!-- HEADER START -->
+        <header class="site-header">
+            <div class="container header-inner">
+                <img class="brand" src="assets/mpms-logo-horizontal.png" alt="MPMS Logo">
+                <div class="header-right">
+                    <a class="header-phone" href="tel:8002156224">(800) 215-6224</a>
+                    <div class="nav-wrapper">
+                        <button class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <nav id="primary-navigation" class="nav" data-menu>
+                            <a href="index.html">Home</a>
+                            <div class="nav-dropdown">
+                                <a class="nav-dropdown-link" href="about.html">About</a>
+                                <div class="nav-dropdown-menu">
+                                    <a href="meet-the-staff.html">Meet the Staff</a>
+                                    <a href="faqs.html">FAQs</a>
+                                    <a href="who-we-help.html">Who We Help</a>
+                                </div>
+                            </div>
+                            <div class="nav-dropdown">
+                                <a class="nav-dropdown-link" href="services.html">Services</a>
+                                <div class="nav-dropdown-menu">
+                                    <a href="credentialing.html">Credentialing</a>
+                                    <a href="coding-and-billing.html">Coding and Billing</a>
+                                    <a href="ar-follow-up.html">AR Follow-Up</a>
+                                    <a href="patient-collections.html">Patient Collections</a>
+                                </div>
+                            </div>
+                            <a href="billing-guide.html">Billing Guide</a>
+                            <a href="contact.html">Contact</a>
+                            <a href="blog.html">Blog</a>
+                        </nav>
+                    </div>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
+        <!-- HEADER END -->
 
-    <main id="top" class="container">
-        <section class="section">
-            <h1>Services</h1>
-            <p>Use this page to outline your offerings. Add your own sections, imagery, and details.</p>
-            <div class="grid">
-                <article class="card">Service block</article>
-                <article class="card">Service block</article>
-                <article class="card">Service block</article>
-            </div>
-        </section>
+    <div class="intro">
+        <img src="assets/services/MPMS_Medical_Practice_Management_Services_Sub_Banner_6.jpg" alt="Medical professionals reviewing data">
+    </div>
+
+    <main class="services-main">
+        <div class="container">
+            <section class="services-section service-hero">
+                <h2>SERVICES</h2>
+                <p>Medical Practice Management Services has earned an exceptional reputation within the healthcare community. MPMS services are delivered with unsurpassed professionalism, integrity, and quality. We strive for collaborative, seamless work with each client's office—we want to be part of your success story. Click on the services below to learn more about how MPMS can support you.</p>
+            </section>
+
+            <section class="services-section">
+                <h3>Core Offerings</h3>
+                <div class="service-pillars">
+                    <a href="credentialing.html">Credentialing</a>
+                    <a href="coding-and-billing.html">Coding &amp; Billing</a>
+                    <a href="ar-follow-up.html">Accounts Receivable Follow-Up</a>
+                    <a href="patient-collections.html">Patient Collections</a>
+</div>
+            </section>
+
+            <section class="services-section">
+                <h3>Services Include</h3>
+                <ul class="info-list">
+                    <li>Post charges and payments.</li>
+                    <li>Apply and monitor payer and bad debt adjustments.</li>
+                    <li>Submit electronic insurance billing daily and paper claims when required.</li>
+                    <li>Receive payments electronically from payers whenever possible.</li>
+                    <li>Process denials and return mail.</li>
+                    <li>Follow up on unpaid insurance claims.</li>
+                    <li>Manage self-pay collections.</li>
+                    <li>Audit credit balances.</li>
+                    <li>Handle collection agency interactions.</li>
+                    <li>Address patient inquiries.</li>
+                    <li>Respond quickly to provider questions.</li>
+                    <li>Assist in the creation of competitive fee schedules.</li>
+                    <li>Perform coding audits and documentation reviews.</li>
+                    <li>Provide monthly reports detailing accounts receivable status.</li>
+                    <li>Perform credentialing work for providers.</li>
+                    <li>Assist practices with payer reimbursement negotiations.</li>
+                </ul>
+            </section>
+
+            <section class="services-section">
+                <h3>Monthly Fees</h3>
+                <p>The cost for basic billing services is included in the monthly billing fee, which is a percent of the money collected minus refunds. MPMS can vary billing fee rates or add services depending on the support you need.</p>
+                <ul class="info-list">
+                    <li>Statement costs and postage</li>
+                    <li>Software licenses</li>
+                    <li>Clearinghouse costs</li>
+                    <li>Software training for billing, scheduling, and reception</li>
+                    <li>Connectivity to practice management systems</li>
+                    <li>Contracting and payer negotiation services</li>
+                    <li>Credentialing services</li>
+                    <li>Coding services for encounters</li>
+                </ul>
+            </section>
+
+            <section class="services-section">
+                <h3>Compliance and Confidentiality</h3>
+                <ul class="info-list">
+                    <li>Compliance services are part of the monthly billing fee.</li>
+                    <li>All MPMS services meet HIPAA privacy and security regulations.</li>
+                    <li>We can provide a copy of our billing and coding compliance plan upon request.</li>
+                    <li>MPMS addresses suspected compliance issues with appropriate urgency.</li>
+                    <li>Compliance requires collaboration between MPMS and your office.</li>
+                    <li>At the onset, MPMS and each client sign a Business Associate Agreement.</li>
+                </ul>
+            </section>
+
+            <section class="services-section">
+                <h3>How to Get Started</h3>
+                <ul class="info-list">
+                    <li>Provide accounts receivable data so MPMS can determine the monthly billing rate.</li>
+                    <li>Share encounter counts, charges, payments, and adjustments from the past 12 months.</li>
+                    <li>Supply payer mix data, including Medicare, Medicaid, commercial, self-pay, and any other plans, plus aging and credit balance analyses.</li>
+                    <li>Tell us the status of your accounts receivable and major issues facing your practice.</li>
+                    <li>Discuss any additional services you'd like beyond AR work.</li>
+                    <li>Once the billing fee and add-ons are set, MPMS prepares a Billing Service Agreement.</li>
+                    <li>Services typically begin within 30 days of a signed agreement—often sooner when timelines permit.</li>
+                </ul>
+            </section>
+        </div>
     </main>
 
-    <footer class="footer">
-        <div class="container footer-content">
-            <p>© 2026 MPMS. All rights reserved.</p>
-            <div class="footer-social">
-                <a class="social-btn" href="https://facebook.com" aria-label="Facebook">
-                    <img src="assets/footer/Facebook_Logo_Primary.png" alt="Facebook">
-                </a>
-                <a class="social-btn" href="https://www.linkedin.com" aria-label="LinkedIn">
-                    <img src="assets/footer/LI-In-Bug.png" alt="LinkedIn">
-                </a>
-                <a class="social-btn email" href="mailto:info@example.com" aria-label="Email"><span>@</span></a>
-            </div>
-        </div>
-    </footer>
+                <!-- FOOTER START -->
+                <footer class="footer">
+                    <div class="container footer-content">
+                        <div class="footer-top">
+                            <div class="footer-ask">
+                                <img class="footer-ask-photo" src="assets/footer/secta.ai_014.jpg" alt="Bryan, CEO of MPMS">
+                                <div>
+                                    <p class="footer-ask-kicker">Have questions?</p>
+                                    <p class="footer-ask-title">Ask Bryan, our CEO</p>
+                                </div>
+                            </div>
+                            <a class="footer-cta-btn" href="contact.html">Contact Us</a>
+                        </div>
+                
+                        <div class="footer-bottom">
+                            <div class="footer-info">
+                                <p>8836 N Hess St Ste B</p>
+                                <p>Hayden, Idaho 83835</p>
+                                <p>(800) 215-6224</p>
+                                <div class="footer-divider" aria-hidden="true"></div>
+                                <p class="footer-copy">© 2026 MPMS. All rights reserved.</p>
+                            </div>
+                            <div class="footer-social-block">
+                                <div class="footer-social">
+                                    <a class="social-btn" href="https://www.facebook.com/profile.php?id=100029109564676" aria-label="Facebook">
+                                        <img src="assets/footer/Facebook_Logo_Primary.png" alt="Facebook">
+                                    </a>
+                                    <a class="social-btn" href="https://www.linkedin.com/company/medical-practice-management-services/" aria-label="LinkedIn">
+                                        <img src="assets/footer/LI-In-Bug.png" alt="LinkedIn">
+                                    </a>
+                                    <a class="social-btn email" href="mailto:marketing@mpms.com" aria-label="Email"><span>@</span></a>
+                                </div>
+                                <a class="footer-admin" href="admin.html">Admin</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- FOOTER END -->
+        <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyDGbEpmLm2HxkFvcca6Ae4V2Kfn--d7bRo",
+        authDomain: "mpms-website-80b69.firebaseapp.com",
+        projectId: "mpms-website-80b69",
+        storageBucket: "mpms-website-80b69.firebasestorage.app",
+        messagingSenderId: "837288121384",
+        appId: "1:837288121384:web:e6d25084ac17d98575d11d",
+        measurementId: "G-JH8H58273B"
+      };
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+    <script src="scripts/nav.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

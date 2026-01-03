@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MPMS | Contact</title>
+    <title>MPMS | Coding and Billing</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -48,37 +48,44 @@
         </header>
         <!-- HEADER END -->
 
-    <main id="top" class="container contact-page">
-        <section class="section contact-card">
-            <h1>Contact</h1>
-            <p>Reach out and our team will follow up promptly.</p>
-            <p class="contact-phone-line">Prefer to call? <a href="tel:8002156224">(800) 215-6224</a></p>
-            <form class="contact-form" action="#" method="post">
-                <label>
-                    Name
-                    <input type="text" name="name" placeholder="Your name">
-                </label>
-                <label>
-                    Email
-                    <input type="email" name="email" placeholder="you@example.com">
-                </label>
-                <label>
-                    Phone
-                    <input type="tel" name="phone" placeholder="(555) 555-5555">
-                </label>
-                <label>
-                    Message
-                    <textarea name="message" rows="3" placeholder="How can we help?"></textarea>
-                </label>
-                <div class="recaptcha-wrap">
-                    <div class="g-recaptcha" data-sitekey="6LfGkj4sAAAAABswVqdcZ0VtC3C1i0hzeuZYzWiF"></div>
-                </div>
-                <div class="form-status" aria-live="polite">
-                    <span class="loading-spinner" aria-hidden="true"></span>
-                    <span class="form-status-text"></span>
-                </div>
-                <button type="submit">Send</button>
-            </form>
+    <div class="intro">
+        <img src="assets/billing-guide/MPMS_Medical_Practice_Management_Services_Sub_Banner_2.jpg" alt="MPMS coding analysts">
+    </div>
+
+    <main class="container">
+        <section class="section service-text">
+            <h1 class="service-title">Coding and Billing</h1>
+        </section>
+        <section class="section service-section">
+            <h2>Coding</h2>
+            <p>Your practice retains primary coding responsibility, but MPMS reviews complex cases within the standard billing fee and asks for documentation when needed to ensure the appropriate code is used. We keep a curated library of coding resources, including reference materials, association guidance, and government tools.</p>
+        </section>
+        <section class="section service-section">
+            <h2>Posting Methodology Goals</h2>
+            <ul class="service-list">
+                <li>Post clean charges/claims within 24 hours of receiving full posting information.</li>
+                <li>Alert clients about non-clean charges/claims within 48 hours.</li>
+                <li>Verify every charge for accuracy before submission to payers or patients.</li>
+                <li>Post payments within 24 hours once all posting fields are complete.</li>
+                <li>Submit insurance claims every business day.</li>
+                <li>Send statements on a schedule that aligns with your practice.</li>
+            </ul>
+        </section>
+        <section class="section service-section">
+            <h2>Reporting Methodology</h2>
+            <p>We partner to define the reports you need from your practice management system, aiming to close each month within three business days once your team shares final data. Month-end packages arrive within 15 business days and include monthly accounts receivable graphs, aging analysis, collection ratios versus MGMA benchmarks, and optional customized reports by provider/location.</p>
+        </section>
+        <section class="section service-section">
+            <h2>Review of Encounters</h2>
+            <ul class="service-list">
+                <li>Annual E&amp;M encounter reviews are available, with additional reviews offered at a competitive rate.</li>
+                <li>Documented encounters can be audited for coding accuracy and completeness per request for an additional fee.</li>
+                <li>Special reviews tied to compliance efforts such as RAC audits are provided at no extra charge when needed.</li>
+            </ul>
+        </section>
+        <section class="section service-section">
+            <h2>Other Management Analysis</h2>
+            <p>MPMS can perform broader management analysis of your revenue cycle and billing practice profiles. Depending on the project scope, mutually agreed fees or consulting rates may apply for those expanded services.</p>
         </section>
     </main>
 
@@ -120,12 +127,9 @@
             </div>
         </footer>
         <!-- FOOTER END -->
-
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script type="module">
+        <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
-
       const firebaseConfig = {
         apiKey: "AIzaSyDGbEpmLm2HxkFvcca6Ae4V2Kfn--d7bRo",
         authDomain: "mpms-website-80b69.firebaseapp.com",
@@ -135,72 +139,20 @@
         appId: "1:837288121384:web:e6d25084ac17d98575d11d",
         measurementId: "G-JH8H58273B"
       };
-      initializeApp(firebaseConfig);
-      getAnalytics();
-
-      const endpoint =
-        "https://us-central1-mpms-website-80b69.cloudfunctions.net/submitContact";
-      const form = document.querySelector(".contact-form");
-      const statusText = document.querySelector(".form-status-text");
-      const updateStatus = (message) => {
-        if (statusText) {
-          statusText.textContent = message;
-        }
-      };
-
-      form?.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        if (!form) return;
-        const submitBtn = form.querySelector("button[type='submit']");
-        submitBtn?.setAttribute("disabled", "disabled");
-        form.classList.add("is-loading");
-        updateStatus("Sending...");
-
-        const recaptchaToken = window.grecaptcha ? grecaptcha.getResponse() : "";
-        if (!recaptchaToken) {
-          updateStatus("Please complete the reCAPTCHA challenge.");
-          submitBtn?.removeAttribute("disabled");
-          form.classList.remove("is-loading");
-          return;
-        }
-
-        const formData = new FormData(form);
-        const payload = {
-          name: formData.get("name") ?? "",
-          email: formData.get("email") ?? "",
-          phone: formData.get("phone") ?? "",
-          message: formData.get("message") ?? "",
-          recaptchaToken
-        };
-
-        try {
-          const response = await fetch(endpoint, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
-          });
-
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-
-          updateStatus("Thanks! Your message is on its way.");
-          form.reset();
-          if (window.grecaptcha) {
-            grecaptcha.reset();
-          }
-        } catch (error) {
-          updateStatus("Something went wrong. Please try again.");
-        } finally {
-          submitBtn?.removeAttribute("disabled");
-          form.classList.remove("is-loading");
-        }
-      });
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
     </script>
     <script src="scripts/nav.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
 
 

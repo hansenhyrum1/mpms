@@ -8,22 +8,46 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <img class="brand" src="assets/mpms-logo-horizontal.png" alt="MPMS Logo">
-            <div class="header-right">
-                <a class="header-phone" href="tel:8002156224">(800) 215-6224</a>
-                <nav class="nav">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="billing-guide.html">Billing Guide</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="blog.html">Blog</a>
-                </nav>
+        <!-- HEADER START -->
+        <header class="site-header">
+            <div class="container header-inner">
+                <img class="brand" src="assets/mpms-logo-horizontal.png" alt="MPMS Logo">
+                <div class="header-right">
+                    <a class="header-phone" href="tel:8002156224">(800) 215-6224</a>
+                    <div class="nav-wrapper">
+                        <button class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <nav id="primary-navigation" class="nav" data-menu>
+                            <a href="index.html">Home</a>
+                            <div class="nav-dropdown">
+                                <a class="nav-dropdown-link" href="about.html">About</a>
+                                <div class="nav-dropdown-menu">
+                                    <a href="meet-the-staff.html">Meet the Staff</a>
+                                    <a href="faqs.html">FAQs</a>
+                                    <a href="who-we-help.html">Who We Help</a>
+                                </div>
+                            </div>
+                            <div class="nav-dropdown">
+                                <a class="nav-dropdown-link" href="services.html">Services</a>
+                                <div class="nav-dropdown-menu">
+                                    <a href="credentialing.html">Credentialing</a>
+                                    <a href="coding-and-billing.html">Coding and Billing</a>
+                                    <a href="ar-follow-up.html">AR Follow-Up</a>
+                                    <a href="patient-collections.html">Patient Collections</a>
+                                </div>
+                            </div>
+                            <a href="billing-guide.html">Billing Guide</a>
+                            <a href="contact.html">Contact</a>
+                            <a href="blog.html">Blog</a>
+                        </nav>
+                    </div>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
+        <!-- HEADER END -->
 
     <div class="intro">
         <img src="assets/index/medical-staff-discussing-chart-cropped.jpg" alt="Medical staff discussing chart">
@@ -60,7 +84,7 @@
                     <img src="assets/index/three.png" alt="3">
                     <div>
                         <div class="why-title">FLEXIBLE</div>
-                        <div class="why-copy">We will work with ANY billing software, including, but not limited to: NextGen, DocuTap, and Kareo.</div>
+                        <div class="why-copy">We will work with ANY billing software, including, but not limited to: DocuTap and Kareo.</div>
                     </div>
                 </div>
             </div>
@@ -94,19 +118,103 @@
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container footer-content">
-            <p>© 2026 MPMS. All rights reserved.</p>
-            <div class="footer-social">
-                <a class="social-btn" href="https://www.facebook.com/profile.php?id=100029109564676" aria-label="Facebook">
-                    <img src="assets/footer/Facebook_Logo_Primary.png" alt="Facebook">
-                </a>
-                <a class="social-btn" href="https://www.linkedin.com/company/medical-practice-management-services/" aria-label="LinkedIn">
-                    <img src="assets/footer/LI-In-Bug.png" alt="LinkedIn">
-                </a>
-                <a class="social-btn email" href="mailto:marketing@mpms.com" aria-label="Email"><span>@</span></a>
+    <section class="full-service">
+        <div class="container full-service-inner">
+            <div class="full-service-title">
+                <h2>FULL SERVICE APPROACH</h2>
+                <p>Is your net collection percentage in the 98-99% range? Are days to collect under 35? Is your A/R over 120 days below 10%? If not, and you want those outcomes while knowing every charge is handled correctly, MPMS can help you move toward these benchmarks.</p>
             </div>
+            <div class="full-service-grid">
+                <div class="full-service-card">
+                    <div class="metric-value">98-99%</div>
+                    <div class="metric-label">Net collection rate</div>
+                    <p>Our goal: rigorous claims quality, denial prevention, and payer follow-up that lift collections toward best-in-class levels.</p>
+                </div>
+                <div class="full-service-card">
+                    <div class="metric-value">&lt; 35 days</div>
+                    <div class="metric-label">Days to collect</div>
+                    <p>We target faster charge capture and reimbursement workflows so cash moves sooner.</p>
+                </div>
+                <div class="full-service-card">
+                    <div class="metric-value">&lt; 10%</div>
+                    <div class="metric-label">A/R over 120 days</div>
+                    <p>Consistent aging reviews and outreach help reduce older balances before they stall.</p>
+                </div>
+            </div>
+            <p class="full-service-note">These are performance targets, not guarantees; we collaborate to design the workflows and oversight that push your metrics in the right direction.</p>
         </div>
-    </footer>
+    </section>
+
+                <!-- FOOTER START -->
+                <footer class="footer">
+                    <div class="container footer-content">
+                        <div class="footer-top">
+                            <div class="footer-ask">
+                                <img class="footer-ask-photo" src="assets/footer/secta.ai_014.jpg" alt="Bryan, CEO of MPMS">
+                                <div>
+                                    <p class="footer-ask-kicker">Have questions?</p>
+                                    <p class="footer-ask-title">Ask Bryan, our CEO</p>
+                                </div>
+                            </div>
+                            <a class="footer-cta-btn" href="contact.html">Contact Us</a>
+                        </div>
+                
+                        <div class="footer-bottom">
+                            <div class="footer-info">
+                                <p>8836 N Hess St Ste B</p>
+                                <p>Hayden, Idaho 83835</p>
+                                <p>(800) 215-6224</p>
+                                <div class="footer-divider" aria-hidden="true"></div>
+                                <p class="footer-copy">© 2026 MPMS. All rights reserved.</p>
+                            </div>
+                            <div class="footer-social-block">
+                                <div class="footer-social">
+                                    <a class="social-btn" href="https://www.facebook.com/profile.php?id=100029109564676" aria-label="Facebook">
+                                        <img src="assets/footer/Facebook_Logo_Primary.png" alt="Facebook">
+                                    </a>
+                                    <a class="social-btn" href="https://www.linkedin.com/company/medical-practice-management-services/" aria-label="LinkedIn">
+                                        <img src="assets/footer/LI-In-Bug.png" alt="LinkedIn">
+                                    </a>
+                                    <a class="social-btn email" href="mailto:marketing@mpms.com" aria-label="Email"><span>@</span></a>
+                                </div>
+                                <a class="footer-admin" href="admin.html">Admin</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- FOOTER END -->
+        <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyDGbEpmLm2HxkFvcca6Ae4V2Kfn--d7bRo",
+        authDomain: "mpms-website-80b69.firebaseapp.com",
+        projectId: "mpms-website-80b69",
+        storageBucket: "mpms-website-80b69.firebasestorage.app",
+        messagingSenderId: "837288121384",
+        appId: "1:837288121384:web:e6d25084ac17d98575d11d",
+        measurementId: "G-JH8H58273B"
+      };
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+    <script src="scripts/nav.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -7,43 +7,156 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <img class="brand" src="assets/mpms-logo-horizontal.png" alt="MPMS Logo">
-            <div class="header-right">
-                <a class="header-phone" href="tel:8002156224">(800) 215-6224</a>
-                <nav class="nav">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="billing-guide.html">Billing Guide</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="blog.html">Blog</a>
-                </nav>
+        <!-- HEADER START -->
+        <header class="site-header">
+            <div class="container header-inner">
+                <img class="brand" src="assets/mpms-logo-horizontal.png" alt="MPMS Logo">
+                <div class="header-right">
+                    <a class="header-phone" href="tel:8002156224">(800) 215-6224</a>
+                    <div class="nav-wrapper">
+                        <button class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <nav id="primary-navigation" class="nav" data-menu>
+                            <a href="index.html">Home</a>
+                            <div class="nav-dropdown">
+                                <a class="nav-dropdown-link" href="about.html">About</a>
+                                <div class="nav-dropdown-menu">
+                                    <a href="meet-the-staff.html">Meet the Staff</a>
+                                    <a href="faqs.html">FAQs</a>
+                                    <a href="who-we-help.html">Who We Help</a>
+                                </div>
+                            </div>
+                            <div class="nav-dropdown">
+                                <a class="nav-dropdown-link" href="services.html">Services</a>
+                                <div class="nav-dropdown-menu">
+                                    <a href="credentialing.html">Credentialing</a>
+                                    <a href="coding-and-billing.html">Coding and Billing</a>
+                                    <a href="ar-follow-up.html">AR Follow-Up</a>
+                                    <a href="patient-collections.html">Patient Collections</a>
+                                </div>
+                            </div>
+                            <a href="billing-guide.html">Billing Guide</a>
+                            <a href="contact.html">Contact</a>
+                            <a href="blog.html">Blog</a>
+                        </nav>
+                    </div>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
+        <!-- HEADER END -->
 
-    <main id="top" class="container">
-        <section class="section">
-            <h1>About MPMS</h1>
-            <p>Replace this text with your story, mission, team bios, and any images you want to showcase.</p>
-        </section>
+    <div class="intro">
+        <img src="assets/about/MPMS_Medical_Practice_Management_Services_Sub_Banner_1.jpg" alt="MPMS staff working on billing">
+    </div>
+
+    <main class="about-main">
+        <div class="container">
+            <section class="about-section about-service">
+                <h2>Full Service Approach</h2>
+                <p>MPMS’ specialty is medical billing and collections, but our services extend to the broader needs of medical practices. The experience and expertise of the MPMS staff is focused on improving efficiency and effectiveness wherever we touch your revenue cycle.</p>
+            </section>
+
+            <section class="about-section">
+                <h3>Our Staff</h3>
+                <ul class="info-list">
+                    <li>Many staff members are certified by the American Academy of Professional Coders as Certified Professional Coders (CPC), Certified Professional Medical Auditors (CPMA), or Certified Professional Billers (CPB).</li>
+                    <li>Each MPMS staff member averages 15 years of experience working in medical billing, both within MPMS and inside outpatient clinics.</li>
+                    <li>Our team routinely researches and resolves unpaid insurance claims.</li>
+                    <li>MPMS staff has experience with multiple State Medicaid programs and insurance payer plans.</li>
+                    <li>MPMS collectors are skilled in payment negotiations for self-pay accounts.</li>
+                    <li>Staff is capable of billing for all types of medical specialties—dental, physical therapy, mental health, family practice, pediatrics, ENT, radiology, general surgery, orthopedics, pain management, hospice, urgent care, and FQHCs.</li>
+                    <li>MPMS has supported Federally Qualified Health Centers across several states.</li>
+                    <li>Each client has a certified coder assigned to their account.</li>
+                </ul>
+            </section>
+
+            <section class="about-section">
+                <h3>Technology & Communication</h3>
+                <ul class="info-list">
+                    <li>MPMS bills on many practice management systems, including DocuTAP, eMD, Practice Partners, PracticeMate, Kareo, and more—we will plug into whatever you already use.</li>
+                    <li>Communication happens through the internet or secure intranet inside each practice’s software so your team can review work in real-time.</li>
+                    <li>Every practice can access and review collections data at any time through their own system.</li>
+                    <li>MPMS assists with software installations, system management, and supports practices using EHRs or paper charts.</li>
+                    <li>We push as many claims and client payments electronically as the systems and payers will allow.</li>
+                    <li>Our goal is to respond to emails and phone messages within 24 hours.</li>
+                    <li>Staff answers client and patient calls Monday through Friday from 8:00 a.m. to 5:00 p.m. PST.</li>
+                </ul>
+            </section>
+        </div>
     </main>
 
-    <footer class="footer">
-        <div class="container footer-content">
-            <p>© 2026 MPMS. All rights reserved.</p>
-            <div class="footer-social">
-                <a class="social-btn" href="https://facebook.com" aria-label="Facebook">
-                    <img src="assets/footer/Facebook_Logo_Primary.png" alt="Facebook">
-                </a>
-                <a class="social-btn" href="https://www.linkedin.com" aria-label="LinkedIn">
-                    <img src="assets/footer/LI-In-Bug.png" alt="LinkedIn">
-                </a>
-                <a class="social-btn email" href="mailto:info@example.com" aria-label="Email"><span>@</span></a>
-            </div>
-        </div>
-    </footer>
+                <!-- FOOTER START -->
+                <footer class="footer">
+                    <div class="container footer-content">
+                        <div class="footer-top">
+                            <div class="footer-ask">
+                                <img class="footer-ask-photo" src="assets/footer/secta.ai_014.jpg" alt="Bryan, CEO of MPMS">
+                                <div>
+                                    <p class="footer-ask-kicker">Have questions?</p>
+                                    <p class="footer-ask-title">Ask Bryan, our CEO</p>
+                                </div>
+                            </div>
+                            <a class="footer-cta-btn" href="contact.html">Contact Us</a>
+                        </div>
+                
+                        <div class="footer-bottom">
+                            <div class="footer-info">
+                                <p>8836 N Hess St Ste B</p>
+                                <p>Hayden, Idaho 83835</p>
+                                <p>(800) 215-6224</p>
+                                <div class="footer-divider" aria-hidden="true"></div>
+                                <p class="footer-copy">© 2026 MPMS. All rights reserved.</p>
+                            </div>
+                            <div class="footer-social-block">
+                                <div class="footer-social">
+                                    <a class="social-btn" href="https://www.facebook.com/profile.php?id=100029109564676" aria-label="Facebook">
+                                        <img src="assets/footer/Facebook_Logo_Primary.png" alt="Facebook">
+                                    </a>
+                                    <a class="social-btn" href="https://www.linkedin.com/company/medical-practice-management-services/" aria-label="LinkedIn">
+                                        <img src="assets/footer/LI-In-Bug.png" alt="LinkedIn">
+                                    </a>
+                                    <a class="social-btn email" href="mailto:marketing@mpms.com" aria-label="Email"><span>@</span></a>
+                                </div>
+                                <a class="footer-admin" href="admin.html">Admin</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <!-- FOOTER END -->
+        <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+      const firebaseConfig = {
+        apiKey: "AIzaSyDGbEpmLm2HxkFvcca6Ae4V2Kfn--d7bRo",
+        authDomain: "mpms-website-80b69.firebaseapp.com",
+        projectId: "mpms-website-80b69",
+        storageBucket: "mpms-website-80b69.firebasestorage.app",
+        messagingSenderId: "837288121384",
+        appId: "1:837288121384:web:e6d25084ac17d98575d11d",
+        measurementId: "G-JH8H58273B"
+      };
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
+    <script src="scripts/nav.js" defer></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
