@@ -1,7 +1,10 @@
-document.addEventListener("DOMContentLoaded", () => {
+const initNav = () => {
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector("#primary-navigation");
   if (!toggle || !nav) return;
+  if (toggle.dataset.navBound === "true") return;
+
+  toggle.dataset.navBound = "true";
 
   const setAria = (open) =>
     toggle.setAttribute("aria-expanded", String(open));
@@ -23,4 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
       closeMenu();
     }
   });
-});
+};
+
+window.initNav = initNav;
+initNav();
+document.addEventListener("layout:loaded", initNav);
+document.addEventListener("DOMContentLoaded", initNav);

@@ -8,112 +8,126 @@
 </head>
 <body>
         <!-- HEADER START -->
-        <header class="site-header">
-            <div class="container header-inner">
-                <img class="brand" src="assets/mpms-logo-horizontal.png" alt="MPMS Logo">
-                <div class="header-right">
-                    <a class="header-phone" href="tel:8002156224">(800) 215-6224</a>
-                    <div class="nav-wrapper">
-                        <button class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                        <nav id="primary-navigation" class="nav" data-menu>
-                            <a href="index.html">Home</a>
-                            <div class="nav-dropdown">
-                                <a class="nav-dropdown-link" href="about.html">About</a>
-                                <div class="nav-dropdown-menu">
-                                    <a href="meet-the-staff.html">Meet the Staff</a>
-                                    <a href="faqs.html">FAQs</a>
-                                    <a href="who-we-help.html">Who We Help</a>
-                                </div>
-                            </div>
-                            <div class="nav-dropdown">
-                                <a class="nav-dropdown-link" href="services.html">Services</a>
-                                <div class="nav-dropdown-menu">
-                                    <a href="credentialing.html">Credentialing</a>
-                                    <a href="coding-and-billing.html">Coding and Billing</a>
-                                    <a href="ar-follow-up.html">AR Follow-Up</a>
-                                    <a href="patient-collections.html">Patient Collections</a>
-                                </div>
-                            </div>
-                            <a href="billing-guide.html">Billing Guide</a>
-                            <a href="contact.html">Contact</a>
-                            <a href="blog.html">Blog</a>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </header>
+        <div id="site-header"></div>
         <!-- HEADER END -->
 
     <main id="top" class="container">
-        <section class="section">
-            <h1>Admin</h1>
-            <p>Use this area to manage blog posts and site content. Hook up authentication and your CMS tools here.</p>
-            <div class="card">
-                <p>Future admin dashboard goes here.</p>
+        <section class="section admin-auth" data-auth-section>
+            <div class="card auth-card">
+                <h1>Admin Sign In</h1>
+                <p class="auth-note">Sign in with your admin email and password.</p>
+                <form class="contact-form auth-form">
+                    <label>
+                        Email
+                        <input type="email" name="email" placeholder="you@mpms.com" required>
+                    </label>
+                    <label>
+                        Password
+                        <input type="password" name="password" placeholder="••••••••" required>
+                    </label>
+                    <div class="auth-status" aria-live="polite">
+                        <span class="auth-error" role="alert" hidden></span>
+                    </div>
+                    <button type="submit">Sign In</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="section admin-content" data-admin-section hidden>
+            <div class="admin-header">
+                <h1>Admin</h1>
+                <div class="admin-meta">
+                    <span class="admin-user"></span>
+                    <button type="button" class="admin-signout">Sign out</button>
+                </div>
+            </div>
+            <div class="card blog-admin">
+                <h2>Blog Posts</h2>
+                <p>Create and edit blog posts in the editor.</p>
+                <div class="blog-admin-actions">
+                    <a class="blog-new" href="admin-blog-editor.html">New blog post</a>
+                </div>
+                <div class="auth-status" aria-live="polite">
+                    <span class="auth-error blog-error" role="alert" hidden></span>
+                    <span class="blog-success" hidden></span>
+                </div>
+                <div class="blog-admin-list" data-blog-list></div>
+            </div>
+            <div class="card staff-admin">
+                <h2>Meet the Staff</h2>
+                <p>Add staff cards that appear on the Meet the Staff page.</p>
+                <form class="contact-form staff-form" data-staff-form>
+                    <label>
+                        Name
+                        <input type="text" name="name" placeholder="Full name">
+                    </label>
+                    <label>
+                        Title
+                        <input type="text" name="title" placeholder="Title">
+                    </label>
+                    <label>
+                        Credentials
+                        <input type="text" name="credentials" placeholder="CPC, CPMA, etc.">
+                    </label>
+                    <label>
+                        Photo Upload
+                        <input type="file" name="photoFile" accept="image/*">
+                    </label>
+                    <div class="staff-preview" data-staff-preview hidden>
+                        <span>Crop preview</span>
+                        <img alt="Cropped staff photo preview">
+                    </div>
+                    <div class="auth-status" aria-live="polite">
+                        <span class="auth-error staff-error" role="alert" hidden></span>
+                        <span class="staff-success" hidden></span>
+                    </div>
+                    <button type="submit">Add Staff Member</button>
+                </form>
+                <div class="staff-admin-list" data-staff-list></div>
+            </div>
+            <div class="card contact-admin">
+                <h2>Contact Form Recipient</h2>
+                <p>Set the email address that receives contact form notifications.</p>
+                <form class="contact-form" data-contact-form>
+                    <label>
+                        Recipient Email
+                        <input type="email" name="contactRecipient" placeholder="email@example.com">
+                    </label>
+                    <div class="auth-status" aria-live="polite">
+                        <span class="auth-error contact-error" role="alert" hidden></span>
+                        <span class="contact-success" hidden></span>
+                    </div>
+                    <button type="submit">Save Email</button>
+                </form>
             </div>
         </section>
     </main>
 
         <!-- FOOTER START -->
-        <footer class="footer">
-            <div class="container footer-content">
-                <div class="footer-top">
-                    <div class="footer-ask">
-                        <img class="footer-ask-photo" src="assets/footer/secta.ai_014.jpg" alt="Bryan, CEO of MPMS">
-                        <div>
-                            <p class="footer-ask-kicker">Have questions?</p>
-                            <p class="footer-ask-title">Ask Bryan, our CEO</p>
-                        </div>
-                    </div>
-                    <a class="footer-cta-btn" href="contact.html">Contact Us</a>
+        <div id="site-footer"></div>
+        <!-- FOOTER END -->
+        <div class="cropper-modal" data-crop-modal hidden>
+            <div class="cropper-panel" role="dialog" aria-modal="true" aria-label="Crop staff photo">
+                <p class="cropper-hint">Drag the photo to reposition it within the frame.</p>
+                <div class="cropper-frame" data-crop-frame>
+                    <img class="cropper-image" data-crop-image alt="Crop preview">
                 </div>
-        
-                <div class="footer-bottom">
-                    <div class="footer-info">
-                        <p>8836 N Hess St Ste B</p>
-                        <p>Hayden, Idaho 83835</p>
-                        <p>(800) 215-6224</p>
-                        <div class="footer-divider" aria-hidden="true"></div>
-                        <p class="footer-copy">© 2026 MPMS. All rights reserved.</p>
-                    </div>
-                    <div class="footer-social-block">
-                        <div class="footer-social">
-                            <a class="social-btn" href="https://www.facebook.com/profile.php?id=100029109564676" aria-label="Facebook">
-                                <img src="assets/footer/Facebook_Logo_Primary.png" alt="Facebook">
-                            </a>
-                            <a class="social-btn" href="https://www.linkedin.com/company/medical-practice-management-services/" aria-label="LinkedIn">
-                                <img src="assets/footer/LI-In-Bug.png" alt="LinkedIn">
-                            </a>
-                            <a class="social-btn email" href="mailto:marketing@mpms.com" aria-label="Email"><span>@</span></a>
-                        </div>
-                        <a class="footer-admin" href="admin.html">Admin</a>
-                    </div>
+                <label class="cropper-zoom">
+                    Zoom
+                    <input type="range" min="1" max="3" step="0.01" value="1" data-crop-zoom>
+                </label>
+                <div class="cropper-actions">
+                    <button type="button" class="cropper-btn secondary" data-crop-cancel>Cancel</button>
+                    <button type="button" class="cropper-btn" data-crop-confirm>Use Crop</button>
                 </div>
             </div>
-        </footer>
-        <!-- FOOTER END -->
-        <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
-      const firebaseConfig = {
-        apiKey: "AIzaSyDGbEpmLm2HxkFvcca6Ae4V2Kfn--d7bRo",
-        authDomain: "mpms-website-80b69.firebaseapp.com",
-        projectId: "mpms-website-80b69",
-        storageBucket: "mpms-website-80b69.firebasestorage.app",
-        messagingSenderId: "837288121384",
-        appId: "1:837288121384:web:e6d25084ac17d98575d11d",
-        measurementId: "G-JH8H58273B"
-      };
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-    </script>
-    <script src="scripts/nav.js" defer></script>
+        </div>
+        <script src="scripts/layout.js" defer></script>
+        <script src="scripts/nav.js" defer></script>
+        <script type="module" src="scripts/admin-auth.js"></script>
 </body>
 </html>
+
 
 
 

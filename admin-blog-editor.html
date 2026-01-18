@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPMS | Blog Editor</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+        <!-- HEADER START -->
+        <div id="site-header"></div>
+        <!-- HEADER END -->
+
+    <main id="top" class="container">
+        <section class="section admin-auth" data-auth-section>
+            <div class="card auth-card">
+                <h1>Admin Sign In</h1>
+                <p class="auth-note">Sign in to create or edit blog posts.</p>
+                <form class="contact-form auth-form">
+                    <label>
+                        Email
+                        <input type="email" name="email" placeholder="you@mpms.com" required>
+                    </label>
+                    <label>
+                        Password
+                        <input type="password" name="password" placeholder="••••••••" required>
+                    </label>
+                    <div class="auth-status" aria-live="polite">
+                        <span class="auth-error" role="alert" hidden></span>
+                    </div>
+                    <button type="submit">Sign In</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="section blog-editor" data-editor-section hidden>
+            <div class="admin-header">
+                <h1>Blog Editor</h1>
+                <div class="admin-meta">
+                    <span class="admin-user"></span>
+                    <button type="button" class="admin-signout">Sign out</button>
+                </div>
+            </div>
+            <div class="blog-editor-actions">
+                <a class="blog-back" href="admin.html">Back to Admin</a>
+                <a class="blog-back" href="blog.html">View Blog</a>
+            </div>
+            <form class="contact-form blog-editor-form" data-blog-editor-form>
+                <label>
+                    Title
+                    <input type="text" name="title" placeholder="Post title" required>
+                </label>
+                <label>
+                    Category
+                    <input type="text" name="category" placeholder="Category">
+                </label>
+                <label>
+                    Excerpt
+                    <textarea name="excerpt" rows="2" placeholder="Short summary for the blog list"></textarea>
+                </label>
+                <label>
+                    Cover Image (optional)
+                    <input type="file" accept="image/*" data-cover-image>
+                </label>
+                <div class="blog-cover-preview" data-cover-preview hidden>
+                    <img alt="Cover preview">
+                    <button type="button" class="blog-cover-remove" data-cover-remove>Remove cover</button>
+                </div>
+                <label>
+                    Body
+                    <span class="blog-editor-note">Use the toolbar to add headings, lists, and images.</span>
+                </label>
+                <div class="blog-editor-toolbar" data-editor-toolbar>
+                    <label class="blog-editor-select">
+                        Block
+                        <select data-block-select>
+                            <option value="p">Paragraph</option>
+                            <option value="h1">Heading 1</option>
+                            <option value="h2">Heading 2</option>
+                        </select>
+                    </label>
+                    <label class="blog-editor-select">
+                        Text
+                        <select data-text-style>
+                            <option value="normal">Normal</option>
+                            <option value="bold">Bold</option>
+                            <option value="italic">Italic</option>
+                            <option value="bold-italic">Bold + Italic</option>
+                        </select>
+                    </label>
+                    <label class="blog-editor-select">
+                        List
+                        <select data-list-style>
+                            <option value="none">None</option>
+                            <option value="unordered">Bullets</option>
+                            <option value="ordered">Numbered</option>
+                        </select>
+                    </label>
+                    <button type="button" data-action="link">Link</button>
+                    <button type="button" data-action="image">Image</button>
+                </div>
+                <div class="blog-editor-body" data-editor-body contenteditable="true" role="textbox" aria-multiline="true"></div>
+                <input type="file" accept="image/*" data-editor-image hidden>
+                <div class="auth-status" aria-live="polite">
+                    <span class="auth-error blog-error" role="alert" hidden></span>
+                    <span class="blog-success" hidden></span>
+                </div>
+                <button type="submit">Save Post</button>
+            </form>
+        </section>
+    </main>
+
+        <!-- FOOTER START -->
+        <div id="site-footer"></div>
+        <!-- FOOTER END -->
+    <script src="scripts/layout.js" defer></script>
+    <script src="scripts/nav.js" defer></script>
+    <script type="module" src="scripts/blog-editor.js"></script>
+    <div class="cropper-modal" data-cover-crop-modal hidden>
+        <div class="cropper-panel" role="dialog" aria-modal="true" aria-label="Crop cover image">
+            <p class="cropper-hint">Drag the image to position it inside the frame.</p>
+            <div class="cropper-frame" data-cover-crop-frame>
+                <img class="cropper-image" data-cover-crop-image alt="Cover crop preview">
+            </div>
+            <label class="cropper-zoom">
+                Zoom
+                <input type="range" min="1" max="3" step="0.01" value="1" data-cover-crop-zoom>
+            </label>
+            <div class="cropper-actions">
+                <button type="button" class="cropper-btn secondary" data-cover-crop-cancel>Cancel</button>
+                <button type="button" class="cropper-btn" data-cover-crop-confirm>Use Crop</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

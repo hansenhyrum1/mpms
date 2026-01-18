@@ -10,8 +10,8 @@ The site can be hosted on GitHub Pages; Firebase Functions and Firestore run sep
 - Root `*.html` files are the pages.
 - `main.css` contains all styles.
 - `assets/` holds images and downloads.
-- `scripts/` holds small utilities (header/footer sync).
-- `partials/` holds shared header/footer templates.
+- `scripts/` holds client-side JavaScript (layout + navigation).
+- `header.html` and `footer.html` are shared layout partials.
 - `functions/` contains Firebase Cloud Functions (contact form backend).
 
 ## Editing content
@@ -30,34 +30,39 @@ The site can be hosted on GitHub Pages; Firebase Functions and Firestore run sep
 - Try to keep font sizes and spacing consistent with existing patterns.
 - Colors are already set; avoid changing them unless requested.
 
-## Layout sync (header/footer)
+## Layout includes (header/footer)
 
-All page headers and footers are managed as shared partials and synced into each HTML page.
+The shared header and footer are injected on page load.
 
-1) Edit the partials:
-- `partials/header.html`
-- `partials/footer.html`
+1) Edit the shared partials:
+- `header.html`
+- `footer.html`
 
-2) Sync the pages:
-```
-python scripts/sync-layouts.py
-```
-Or on Windows:
-```
-scripts\sync-layouts.cmd
-```
+2) Each page includes placeholders:
+- `<div id="site-header"></div>`
+- `<div id="site-footer"></div>`
 
-Notes:
-- The sync script replaces the content between `<!-- HEADER START -->` / `<!-- HEADER END -->` and
-  `<!-- FOOTER START -->` / `<!-- FOOTER END -->` in each root HTML file.
-- Avoid manual edits inside those marker blocks; re-run the sync script instead.
-- Requires Python 3 available on your PATH.
+3) `scripts/layout.js` loads the partials and `scripts/nav.js` initializes the menu.
 
 ## Contact form (Firebase)
 
 - The contact form is in `contact.html`.
 - Form submissions go to a Firebase Cloud Function endpoint (see `functions/index.js`).
 - Form submissions are stored in Firebase (Firestore).
+- Admins can set the notification recipient in `admin.html` (stored at `siteConfig/contact`).
+- Email notifications use SMTP. Configure Firebase secrets:
+  - `SMTP_HOST` (example: `smtp.gmail.com`)
+  - `SMTP_PORT` (example: `465`)
+  - `SMTP_USER`
+  - `SMTP_PASS`
+  - `SMTP_FROM` (the from/reply email, typically same as user)
+
+## Blog posts
+
+- Create and edit posts in `admin-blog-editor.html` (requires Firebase Auth sign-in).
+- Admin list lives in `admin.html`.
+- Posts render on `blog.html` and open in `blog-post.html?id=...`.
+- Posts are stored in Firestore in the `blogPosts` collection.
 
 ## Security notes
 
