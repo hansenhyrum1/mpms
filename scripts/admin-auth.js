@@ -155,14 +155,36 @@ const formatDate = (value) => {
   });
 };
 
-const makeExcerpt = (excerpt, body, bodyHtml) => {
-  const htmlText = bodyHtml
-    ? new DOMParser().parseFromString(bodyHtml, "text/html").body.textContent
-    : "";
-  const text = (excerpt || body || htmlText || "").trim();
+const normalizeText = (value) => value.replace(/\s+/g, " ").trim();
+
+const extractHtmlText = (bodyHtml) => {
+  if (!bodyHtml) return "";
+  const doc = new DOMParser().parseFromString(bodyHtml, "text/html");
+  doc.body
+    .querySelectorAll("p, h1, h2, h3, h4, h5, h6, li, blockquote, br, div")
+    .forEach((el) => {
+      el.insertAdjacentText("beforebegin", " ");
+      el.insertAdjacentText("afterend", " ");
+    });
+  return doc.body.textContent ?? "";
+};
+
+const makeExcerpt = (excerpt) => {
+  const rawText = (excerpt || "").trim();
+  if (!rawText) return "";
+  const text = normalizeText(rawText);
   if (!text) return "";
-  if (text.length <= 180) return text;
-  return `${text.slice(0, 177)}...`;
+  if (text.length <= 200) return text;
+  return `${text.slice(0, 197)}...`;
+};
+
+const makeBodyPreview = (body, bodyHtml) => {
+  const htmlText = extractHtmlText(bodyHtml);
+  const rawText = (htmlText || body || "").trim();
+  const text = normalizeText(rawText);
+  if (!text) return "";
+  if (text.length <= 240) return text;
+  return `${text.slice(0, 237)}...`;
 };
 
 const setStaffPreview = (blob) => {
@@ -498,32 +520,37 @@ const renderBlogList = (docs) => {
     const title = data.title ?? "Untitled";
     const category = data.category ?? "";
     const date = formatDate(data.createdAt);
-    const excerpt = makeExcerpt(data.excerpt, data.body, data.bodyHtml);
+    const excerpt = makeExcerpt(data.excerpt);
+    const preview = makeBodyPreview(data.body, data.bodyHtml);
+    const coverUrl = data.coverImageUrl ?? "";
 
-    const card = document.createElement("div");
-    card.className = "card blog-admin-card";
+    const card = document.createElement("article");
+    card.className = "card blog-card blog-admin-card";
     card.dataset.id = docSnapshot.id;
 
-    const titleEl = document.createElement("h3");
+    if (coverUrl) {
+      const cover = document.createElement("img");
+      cover.className = "blog-cover";
+      cover.src = coverUrl;
+      cover.alt = title;
+      cover.loading = "lazy";
+      card.appendChild(cover);
+    } else {
+      const cover = document.createElement("div");
+      cover.className = "blog-cover blog-cover-empty";
+      cover.setAttribute("aria-hidden", "true");
+      card.appendChild(cover);
+    }
+
+    const body = document.createElement("div");
+    body.className = "blog-card-body";
+
+    const header = document.createElement("div");
+    header.className = "blog-admin-header";
+
+    const titleEl = document.createElement("h2");
     titleEl.textContent = title;
-    card.appendChild(titleEl);
-
-    const meta = document.createElement("p");
-    meta.className = "blog-meta";
-    if (category) {
-      const strong = document.createElement("strong");
-      strong.textContent = category;
-      meta.appendChild(strong);
-      meta.append(" - ");
-    }
-    meta.append(date);
-    card.appendChild(meta);
-
-    if (excerpt) {
-      const excerptEl = document.createElement("p");
-      excerptEl.textContent = excerpt;
-      card.appendChild(excerptEl);
-    }
+    header.appendChild(titleEl);
 
     const actions = document.createElement("div");
     actions.className = "blog-admin-actions";
@@ -547,7 +574,35 @@ const renderBlogList = (docs) => {
     deleteBtn.setAttribute("draggable", "false");
     actions.appendChild(deleteBtn);
 
-    card.appendChild(actions);
+    header.appendChild(actions);
+    body.appendChild(header);
+
+    const meta = document.createElement("p");
+    meta.className = "blog-meta";
+    if (category) {
+      const strong = document.createElement("strong");
+      strong.textContent = category;
+      meta.appendChild(strong);
+      meta.append(" - ");
+    }
+    meta.append(date);
+    body.appendChild(meta);
+
+    if (excerpt) {
+      const excerptEl = document.createElement("p");
+      excerptEl.className = "blog-admin-excerpt";
+      excerptEl.textContent = excerpt;
+      body.appendChild(excerptEl);
+    }
+
+    if (preview) {
+      const previewEl = document.createElement("p");
+      previewEl.className = "blog-admin-preview";
+      previewEl.textContent = preview;
+      body.appendChild(previewEl);
+    }
+
+    card.appendChild(body);
     blogList.appendChild(card);
   });
 };

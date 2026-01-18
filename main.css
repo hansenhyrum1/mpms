@@ -1190,6 +1190,42 @@ p {
   display: flex;
   align-items: center;
   gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.blog-admin-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.blog-admin-header h2 {
+  margin-bottom: 0;
+}
+
+.blog-admin-card .blog-admin-actions {
+  justify-content: flex-end;
+  margin-top: 0;
+}
+
+.blog-admin-excerpt,
+.blog-admin-preview {
+  color: #223041;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-admin-excerpt {
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.blog-admin-preview {
+  margin: 0 0 12px;
 }
 
 .blog-new {
