@@ -49,7 +49,7 @@ The shared header and footer are injected on page load.
 - The contact form is in `contact.html`.
 - Form submissions go to a Firebase Cloud Function endpoint (see `functions/index.js`).
 - Form submissions are stored in Firebase (Firestore).
-- Admins can set the notification recipient in `admin.html` (stored at `siteConfig/contact`).
+- Admins can set the notification recipient in `admin-contact.html` (stored at `siteConfig/contact`).
 - Email notifications use SMTP. Configure Firebase secrets:
   - `SMTP_HOST` (example: `smtp.gmail.com`)
   - `SMTP_PORT` (example: `465`)
@@ -60,7 +60,8 @@ The shared header and footer are injected on page load.
 ## Blog posts
 
 - Create and edit posts in `admin-blog-editor.html` (requires Firebase Auth sign-in).
-- Admin list lives in `admin.html`.
+- Blog admin list lives in `admin.html`.
+- Staff admin list lives in `admin-staff.html`.
 - Posts render on `blog.html` and open in `blog-post.html?id=...`.
 - Posts are stored in Firestore in the `blogPosts` collection.
 

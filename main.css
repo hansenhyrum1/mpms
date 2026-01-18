@@ -1124,6 +1124,41 @@ p {
   background: #e9f0f7;
 }
 
+.admin-nav {
+  margin: 16px 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #d9e2ec;
+  background: #f5f8fb;
+}
+
+.admin-nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #d9e2ec;
+  background: #ffffff;
+  color: #0f447a;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.admin-nav-link:hover {
+  background: #e9f0f7;
+  text-decoration: none;
+}
+
+.admin-nav-link[aria-current="page"] {
+  background: #0f447a;
+  border-color: #0f447a;
+  color: #ffffff;
+}
+
 .staff-admin {
   margin-top: 24px;
 }

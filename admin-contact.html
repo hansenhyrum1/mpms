@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MPMS | Admin</title>
+    <title>MPMS | Admin - Contact</title>
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="main.css">
 </head>
@@ -24,7 +24,7 @@
                     </label>
                     <label>
                         Password
-                        <input type="password" name="password" placeholder="••••••••" required>
+                        <input type="password" name="password" placeholder="" required>
                     </label>
                     <div class="auth-status" aria-live="polite">
                         <span class="auth-error" role="alert" hidden></span>
@@ -43,21 +43,24 @@
                 </div>
             </div>
             <nav class="admin-nav" aria-label="Admin pages">
-                <a class="admin-nav-link" href="admin.html" aria-current="page">Blog Posts</a>
+                <a class="admin-nav-link" href="admin.html">Blog Posts</a>
                 <a class="admin-nav-link" href="admin-staff.html">Meet the Staff</a>
-                <a class="admin-nav-link" href="admin-contact.html">Contact Recipient</a>
+                <a class="admin-nav-link" href="admin-contact.html" aria-current="page">Contact Recipient</a>
             </nav>
-            <div class="card blog-admin">
-                <h2>Blog Posts</h2>
-                <p>Create and edit blog posts in the editor.</p>
-                <div class="blog-admin-actions">
-                    <a class="blog-new" href="admin-blog-editor.html">New blog post</a>
-                </div>
-                <div class="auth-status" aria-live="polite">
-                    <span class="auth-error blog-error" role="alert" hidden></span>
-                    <span class="blog-success" hidden></span>
-                </div>
-                <div class="blog-admin-list" data-blog-list></div>
+            <div class="card contact-admin">
+                <h2>Contact Form Recipient</h2>
+                <p>Set the email address that receives contact form notifications.</p>
+                <form class="contact-form" data-contact-form>
+                    <label>
+                        Recipient Email
+                        <input type="email" name="contactRecipient" placeholder="email@example.com">
+                    </label>
+                    <div class="auth-status" aria-live="polite">
+                        <span class="auth-error contact-error" role="alert" hidden></span>
+                        <span class="contact-success" hidden></span>
+                    </div>
+                    <button type="submit">Save Email</button>
+                </form>
             </div>
         </section>
     </main>
@@ -70,17 +73,3 @@
         <script type="module" src="scripts/admin-auth.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
